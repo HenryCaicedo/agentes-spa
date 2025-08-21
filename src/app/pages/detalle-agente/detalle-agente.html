@@ -1,0 +1,92 @@
+<h2 class="text-2xl font-bold mb-4 flex items-center">
+  <button (click)="regresar()" class="flex items-center p-2 rounded-xl cursor-pointer focus:outline-none mr-2 hover:bg-gray-100 transition">
+    <svg class="w-5 h-5 mr-1 text-gray-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+    </svg>
+  </button>
+  <span>Detalle del Agente</span>
+</h2>
+
+
+@if (agente) {
+<div class="p-6 bg-white rounded-2xl shadow">
+  <h3 class="text-xl font-semibold mb-2">{{ agente.nombre }}</h3>
+  <p class="text-gray-700">Rol: {{ agente.rol }}</p>
+  <p class="text-gray-700">
+    Estado:
+    <span class="text-sm font-medium px-2 py-0.5 rounded-md" [ngClass]="{
+                    'bg-green-100 text-green-800': agente.estado === 'activo',
+                    'bg-red-100 text-red-600': agente.estado === 'inactivo'
+                }">
+      {{ agente.estado | uppercase }}
+    </span>
+  </p>
+
+  <h4 class="text-lg font-bold mt-4">Cursos asignados</h4>
+  <ul class="space-y-3 mt-2 max-w-md">
+    @for (curso of agente.cursos; track curso.id) {
+    <li class="p-3 border rounded-xl bg-white shadow-sm hover:shadow-md transition">
+      <div class="flex justify-between items-center">
+        <span class="font-semibold text-gray-800">{{ curso.titulo }}</span>
+        <span class="text-xs px-3 py-1 rounded-full bg-blue-100 text-blue-700 font-medium">
+          {{ curso.nivel }}
+        </span>
+      </div>
+      <p class="text-sm text-gray-600 mt-1">Duración: {{ curso.duracion }}</p>
+    </li>
+    }
+  </ul>
+
+  <button (click)="abrirModal()" class="mt-4 px-4 py-2 rounded-xl bg-blue-600 text-white hover:bg-blue-700">
+    Agregar curso
+  </button>
+</div>
+} @else {
+<p class="text-gray-500">Agente no encontrado.</p>
+}
+
+<!-- Modal reutilizable con formulario -->
+<app-modal [title]="'Agregar Curso'" [visible]="modalVisible" [buttons]="[
+    { label: 'Cancelar', action: cerrarModal.bind(this) },
+    { label: 'Guardar', action: agregarCurso.bind(this) }
+  ]">
+  <form [formGroup]="cursoForm" class="space-y-4">
+    <!-- Título -->
+    <div>
+      <label class="block text-sm font-medium">Título</label>
+      <input type="text" formControlName="titulo" class="w-full border rounded-xl px-3 py-2"
+        placeholder="Ej: Curso Angular" />
+      @if (cursoForm.controls['titulo'].invalid && cursoForm.controls['titulo'].touched) {
+      <p class="text-red-600 text-sm">El título es obligatorio</p>
+      }
+    </div>
+
+    <!-- Duración -->
+    <div>
+      <label class="block text-sm font-medium">Duración</label>
+      <input type="text" formControlName="duracion" class="w-full border rounded-xl px-3 py-2" placeholder="Ej: 8h o 30m" />
+      @if (cursoForm.controls['duracion'].invalid && cursoForm.controls['duracion'].touched) {
+      @if (cursoForm.controls['duracion'].errors?.['required']) {
+        <p class="text-red-600 text-sm">La duración es obligatoria</p>
+      }
+      @if (cursoForm.controls['duracion'].errors?.['pattern']) {
+        <p class="text-red-600 text-sm">Formato inválido. Use números seguidos de 'h' (horas) o 'm' (minutos), por ejemplo: 8h o 30m</p>
+      }
+      }
+    </div>
+
+    <!-- Nivel -->
+    <div>
+      <label class="block text-sm font-medium">Nivel</label>
+      <select formControlName="nivel" class="w-full border rounded-xl px-3 py-2">
+        <option value="">Seleccione un nivel</option>
+        <option value="Básico">Básico</option>
+        <option value="Intermedio">Intermedio</option>
+        <option value="Avanzado">Avanzado</option>
+      </select>
+      @if (cursoForm.controls['nivel'].invalid && cursoForm.controls['nivel'].touched) {
+      <p class="text-red-600 text-sm">El nivel es obligatorio</p>
+      }
+    </div>
+  </form>
+</app-modal>
