@@ -1,6 +1,6 @@
-# Aplicación SPA Agentes IA
+# SPA Agentes IA
 
-Aplicación SPA desarrollada en Angular 20 que permite la gestión de agentes de inteligencia artificial y sus cursos asociados.
+Single-page application desarrollada en Angular 20 que permite la gestión de agentes de inteligencia artificial y sus cursos asociados.
 La aplicación utiliza TailwindCSS para los estilos y datos simulados en TS como fuente de información.
 
 ---
