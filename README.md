@@ -1,59 +1,58 @@
-# AgentesSpa
+# Aplicación SPA Agentes IA
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.2.0.
+Aplicación SPA desarrollada en Angular 20 que permite la gestión de agentes de inteligencia artificial y sus cursos asociados.
+La aplicación utiliza TailwindCSS para los estilos y datos simulados en TS como fuente de información.
 
-## Development server
+---
 
-To start a local development server, run:
+## ⭐ Características
+- Mostrar una lista de agentes con sus datos principales.
+- Crear, editar y visualizar el detalle de cada agente.
+- Gestionar cursos asociados a cada agente mediante modales reutilizables.
+- Mostrar notificaciones flotantes (toasts) al realizar acciones. 
 
-```bash
-ng serve
-```
+---
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## 🛠️ Tecnologías utilizadas
+- Angular 20
+- Tailwind CSS
+- RxJS
+- Datos simulados en TS
 
-## Code scaffolding
+---
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## 🚀 Instalación y ejecución
 
-```bash
-ng generate component component-name
-```
+1. Clonar el repositorio:  
+   ```bash
+   git clone https://github.com/HenryCaicedo/agentes-spa
+   cd agentes-spa
+   ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+2. Instalar dependencias:  
+   ```bash
+   npm install
+   ```
 
-```bash
-ng generate --help
-```
+3. Ejecutar la aplicación en modo desarrollo:  
+   ```bash
+   ng serve
+   ```
 
-## Building
+4. Abrir en el navegador:  
+   ```
+   http://localhost:4200
+   ```
 
-To build the project run:
+---
 
-```bash
-ng build
-```
+## 🖼️ Capturas de Pantalla
+<img src="https://github.com/user-attachments/assets/e15525dd-a489-475b-b36d-9430932480cd" width="800" /><br><br>
+<img src="https://github.com/user-attachments/assets/d531445b-497c-4374-b5bb-be7502761860" width="800" /><br><br>
+<img src="https://github.com/user-attachments/assets/ff48133c-1428-42c0-b7bb-8ef99a5d8bbc" width="800" /><br><br>
+<img src="https://github.com/user-attachments/assets/bfc8f785-eacf-4f77-bdad-7d58708c127d" width="800" /><br><br>
+<img src="https://github.com/user-attachments/assets/7a0c7201-05b9-41f6-9cd0-eebd957b1374" width="800" /><br><br>
+<img src="https://github.com/user-attachments/assets/57f89cdd-65d2-45ae-ae95-49c8d3f179f5" width="800" />
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
 
-## Running unit tests
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
