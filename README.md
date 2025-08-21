@@ -47,7 +47,7 @@ La aplicación utiliza TailwindCSS para los estilos y datos simulados en TS como
 ---
 
 ## 🖼️ Capturas de Pantalla
-<img src="https://github.com/user-attachments/assets/e15525dd-a489-475b-b36d-9430932480cd" width="800" /><br><br>
+<img src="https://github.com/user-attachments/assets/85c98285-4406-4dc8-8ba5-138f18b67851" width="800" /><br><br>
 <img src="https://github.com/user-attachments/assets/d531445b-497c-4374-b5bb-be7502761860" width="800" /><br><br>
 <img src="https://github.com/user-attachments/assets/ff48133c-1428-42c0-b7bb-8ef99a5d8bbc" width="800" /><br><br>
 <img src="https://github.com/user-attachments/assets/bfc8f785-eacf-4f77-bdad-7d58708c127d" width="800" /><br><br>
